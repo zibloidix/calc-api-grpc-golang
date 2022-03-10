@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package calc-api-pb;
+option go_package="calc-api-pb";
+
+message Add {
+    int a = 1;
+    int b = 2;
+}
+
+message Subtract {
+    int a = 1;
+    int b = 2;
+}
+
+message Multiply {
+    int a = 1;
+    int b = 2;
+}
+
+message Divide {
+    int a = 1;
+    int b = 2;
+}
+
+message CalcResponse {
+    int result = 1;
+}
+
+service CalcService {
+    rpc Add(Add) returns () {};
+    rpc Subtract(Subtract) returns () {};
+    rpc Multiply(Multiply) returns () {};
+    rpc Divide(Divide) returns () {};
+}
