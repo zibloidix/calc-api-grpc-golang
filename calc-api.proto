@@ -1,35 +1,35 @@
 syntax = "proto3";
 
-package calc-api-pb;
-option go_package="calc-api-pb";
+package calc_api_pb;
+option go_package="./calc_api_pb";
 
-message Add {
-    int a = 1;
-    int b = 2;
+message AddRequest {
+    int32 a = 1;
+    int32 b = 2;
 }
 
-message Subtract {
-    int a = 1;
-    int b = 2;
+message SubtractRequest {
+    int32 a = 1;
+    int32 b = 2;
 }
 
-message Multiply {
-    int a = 1;
-    int b = 2;
+message MultiplyRequest {
+    int32 a = 1;
+    int32 b = 2;
 }
 
-message Divide {
-    int a = 1;
-    int b = 2;
+message DivideRequest {
+    int32 a = 1;
+    int32 b = 2;
 }
 
 message CalcResponse {
-    int result = 1;
+    int32 result = 1;
 }
 
 service CalcService {
-    rpc Add(Add) returns () {};
-    rpc Subtract(Subtract) returns () {};
-    rpc Multiply(Multiply) returns () {};
-    rpc Divide(Divide) returns () {};
+    rpc Add(AddRequest) returns (CalcResponse) {};
+    rpc Subtract(SubtractRequest) returns (CalcResponse) {};
+    rpc Multiply(MultiplyRequest) returns (CalcResponse) {};
+    rpc Divide(DivideRequest) returns (CalcResponse) {};
 }
